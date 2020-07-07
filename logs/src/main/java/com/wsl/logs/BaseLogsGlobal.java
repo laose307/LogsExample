@@ -1,9 +1,9 @@
 package com.wsl.logs;
 
 public class BaseLogsGlobal {
-    public  static  boolean isDebug=true;
+    public  static  boolean Debug=true;
 
-    public static void setIsDebug(boolean isDebug) {
-        BaseLogsGlobal.isDebug = isDebug;
+    public static void setDebug(boolean isDebug) {
+        BaseLogsGlobal.Debug = isDebug;
     }
 }

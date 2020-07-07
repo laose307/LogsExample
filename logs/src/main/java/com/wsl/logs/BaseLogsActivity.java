@@ -17,7 +17,7 @@ public class BaseLogsActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if(BaseLogsGlobal.isDebug){
+        if(BaseLogsGlobal.Debug){
             FloatingView.get().add(this);
         }
 
@@ -28,7 +28,7 @@ public class BaseLogsActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        if(BaseLogsGlobal.isDebug){
+        if(BaseLogsGlobal.Debug){
             FloatingView.get().attach(this);
         }
 
@@ -37,8 +37,7 @@ public class BaseLogsActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-
-        if(BaseLogsGlobal.isDebug){
+        if(BaseLogsGlobal.Debug){
             FloatingView.get().detach(this);
         }
 

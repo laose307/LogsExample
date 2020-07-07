@@ -16,7 +16,7 @@ public class MainActivity extends BaseLogsActivity {
         setContentView(R.layout.activity_main);
 
 
-        BaseLogsGlobal.setIsDebug(BuildConfig.DEBUG);
+        BaseLogsGlobal.setDebug(BuildConfig.DEBUG);
 
         AppLogger.getInstance().e("error %s","测试错误");
         AppLogger.getInstance().i("info %s","测试信息");
