@@ -21,11 +21,6 @@ import java.util.List;
 import java.util.UUID;
 
 
-/**
- * DeviceInfoManager 设备信息管理
- * <p>
- * 主要用于获取系统cpu 内存 唯一标示等一些系统信息
- */
 public class DeviceInfoManager {
 
 
@@ -200,7 +195,6 @@ public class DeviceInfoManager {
             String memoryLine = br.readLine();
             String subMemoryLine = memoryLine.substring(memoryLine.indexOf("MemTotal:"));
             br.close();
-            //将非数字的字符替换为空
             totalMemorySize = Integer.parseInt(subMemoryLine.replaceAll("\\D+", ""));
         } catch (IOException e) {
             e.printStackTrace();
@@ -208,23 +202,12 @@ public class DeviceInfoManager {
         return totalMemorySize;
     }
 
-    /**
-     * 获取顶层activity的包名
-     *
-     * @param context
-     * @return activity的包名
-     */
     public static String getTopActivityPackageName(Context context) {
         ActivityManager activityManager = getActivityManager(context);
         List<ActivityManager.RunningTaskInfo> runningTasks = activityManager.getRunningTasks(1);
         return runningTasks.get(0).topActivity.getPackageName();
     }
 
-    /**
-     * 获取当前进程的CPU使用率
-     *
-     * @return CPU的使用率
-     */
     public static float getCurProcessCpuRate() {
 
         float cpuRate = 0;
@@ -274,11 +257,6 @@ public class DeviceInfoManager {
         return cpuRate;
     }
 
-    /**
-     * 通过top 命令获取 cpu 当前使用率
-     *
-     * @return 当前进程的CPU使用时间
-     */
 
     public static float getAppCpuTop() {
 
@@ -311,7 +289,6 @@ public class DeviceInfoManager {
             cpuUsage = Float.valueOf(cpuUsageStr) / (Float.valueOf(cpuNumberStr) / 100);
 
         } catch (Exception ex) {
-            // 赋予默认值
             ex.printStackTrace();
         }
 
@@ -337,11 +314,7 @@ public class DeviceInfoManager {
         return SystemClock.elapsedRealtime() / 1000;
     }
 
-    /**
-     * 获取总的CPU使用率
-     *
-     * @return CPU使用率
-     */
+
     public static float getTotalCpuRate() {
         float cpuRate = 0;
         try {

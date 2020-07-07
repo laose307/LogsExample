@@ -6,14 +6,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
- * Created by cc on 2019/03/08.
  * <p>
- * AppLogger
- * <p>
- * 管理app日志, 通过 {@link #i(Class, String, Object...)}
- * 输出日志到悬浮窗口。
- * <p>
- * 用法如下:
  * <p>
  * AppLogger.getInstance().i(AppLogger.class, "test out info log");
  * <p>
