@@ -29,7 +29,6 @@ implementation 'com.laose:AppLogs:0.0.2'
 ```
   public class MyApplication extends Application {
   
-      public static LogApplication logApplication;
   
       @Override
       public void onCreate() {
