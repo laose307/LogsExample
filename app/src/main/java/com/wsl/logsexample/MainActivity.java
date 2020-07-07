@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.wsl.logs.BaseLogsActivity;
+import com.wsl.logs.BaseLogsGlobal;
 import com.wsl.logs.util.AppLogger;
 
 public class MainActivity extends BaseLogsActivity {
@@ -13,6 +14,9 @@ public class MainActivity extends BaseLogsActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        BaseLogsGlobal.setIsDebug(BuildConfig.DEBUG);
 
         AppLogger.getInstance().e("error %s","测试错误");
         AppLogger.getInstance().i("info %s","测试信息");

@@ -20,8 +20,26 @@ public class MainActivity extends BaseLogsActivity {
 ```
 ## 二、jcenter引用
 ```
-implementation 'com.laose:AppLogs:0.0.1'
+implementation 'com.laose:AppLogs:0.0.2'
 
 ```
-## 三、注意：
-发布版本不带日志插件，测试版本会携带日志插件
+## 三、注意：发布屏蔽log插件,测试不屏蔽
+代码案例
+
+```
+  public class MyApplication extends Application {
+  
+      public static LogApplication logApplication;
+  
+      @Override
+      public void onCreate() {
+          super.onCreate();
+         //全局控制log
+          BaseLogsGlobal.setIsDebug(BuildConfig.DEBUG);
+      }
+  
+  
+  }
+
+
+```
